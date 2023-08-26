@@ -1,0 +1,17 @@
+/ ALP to perform division of dividend 16-bit numbers by 8-bit divisor in 8086 using MASM.
+CODE SEGMENT
+ASSUME CS:CODE
+START:MOV SI,3000H
+MOV AX,[SI]
+INC SI
+INC SI
+MOV BX,[SI]
+MUL BX
+INC SI
+ADD SI,02H
+MOV [SI],AX
+ADD SI,02H
+MOV [SI],DX
+INT 3
+CODE ENDS
+END START
